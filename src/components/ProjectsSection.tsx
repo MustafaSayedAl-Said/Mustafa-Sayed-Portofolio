@@ -1,16 +1,27 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "Description for project one.",
-    image: "/projects/project-one.png",
-    link: "https://example.com/project-one",
-    tags: ["React", "Node.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Document Management System",
+    description: "A web application for managing documents with user authentication, workspace management, and real-time action logging.",
+    image: "/dms.png",
+    link: "https://dms-client-production.up.railway.app",
+    tags: ["Angular", ".NET Core", "PostgreSQL", "Docker", "RabbitMQ", "SignalR"],
+    demoUrl: "https://dms-client-production.up.railway.app",
+    githubUrl: "https://github.com/MustafaSayedAl-Said/DMS-Deployment",
   },
+  {
+    id: 2,
+    title: "Movies App",
+    description: "A movie browsing application that allows users to search, and filter various movies using The Movie Database (TMDb) API.",
+    image: "/movies-app.png",
+    link: "https://react-movies-app-ten-indol.vercel.app/",
+    tags: ["React", "TypeScript", "TMDb API", "Tailwind CSS"],
+    demoUrl: "https://react-movies-app-ten-indol.vercel.app/",
+    githubUrl: "https://github.com/MustafaSayedAl-Said/react-movies-app"
+  }
 ];
 
 export const ProjectsSection = () => {
@@ -71,6 +82,14 @@ export const ProjectsSection = () => {
                     >
                       <Github size={20} />
                     </a>
+                    <Link
+                      to={`/projects/${project.id}`}
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      title="Read More"
+                    >
+                      <FileText size={20} />
+                    </Link>
+
                   </div>
                 </div>
               </div>
